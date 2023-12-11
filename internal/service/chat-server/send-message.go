@@ -4,6 +4,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+
 	"github.com/msh2107/chat-server/internal/model"
 )
 

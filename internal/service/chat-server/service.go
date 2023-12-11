@@ -13,6 +13,6 @@ type serv struct {
 	txManager   db.TxManager
 }
 
-func NewService(chatRepo repository.ChatRepository, messageRepo repository.MessageRepository, userRepo repository.UserRepository, txManager db.TxManager) service.ChatService {
+func NewChatService(chatRepo repository.ChatRepository, messageRepo repository.MessageRepository, userRepo repository.UserRepository, txManager db.TxManager) service.ChatService {
 	return &serv{chatRepo: chatRepo, messageRepo: messageRepo, userRepo: userRepo, txManager: txManager}
 }

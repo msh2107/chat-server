@@ -2,6 +2,8 @@ package app
 
 import (
 	"context"
+	"log"
+
 	chatImpl "github.com/msh2107/chat-server/internal/api/chat-server"
 	"github.com/msh2107/chat-server/internal/client/db"
 	"github.com/msh2107/chat-server/internal/client/db/pg"
@@ -10,7 +12,6 @@ import (
 	"github.com/msh2107/chat-server/internal/repository/message"
 	"github.com/msh2107/chat-server/internal/repository/user"
 	chatService "github.com/msh2107/chat-server/internal/service/chat-server"
-	"log"
 
 	"github.com/msh2107/chat-server/internal/closer"
 	"github.com/msh2107/chat-server/internal/config"
@@ -117,7 +118,7 @@ func (s *serviceProvider) MessageRepository(ctx context.Context) repository.Mess
 
 func (s *serviceProvider) ChatService(ctx context.Context) service.ChatService {
 	if s.chatService == nil {
-		s.chatService = chatService.NewService(s.ChatRepository(ctx), s.MessageRepository(ctx), s.UserRepository(ctx), s.TxManager(ctx))
+		s.chatService = chatService.NewChatService(s.ChatRepository(ctx), s.MessageRepository(ctx), s.UserRepository(ctx), s.TxManager(ctx))
 	}
 
 	return s.chatService

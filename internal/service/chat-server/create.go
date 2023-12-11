@@ -2,6 +2,7 @@ package chat_server
 
 import (
 	"context"
+
 	"github.com/msh2107/chat-server/internal/model"
 )
 

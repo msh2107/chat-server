@@ -1,10 +1,19 @@
 package converter
 
 import (
+	"google.golang.org/protobuf/types/known/timestamppb"
+
 	"github.com/msh2107/chat-server/internal/model"
 	desc "github.com/msh2107/chat-server/pkg/chat_v1"
-	"google.golang.org/protobuf/types/known/timestamppb"
 )
+
+func ToServiceFromCreateReq(req *desc.CreateRequest) *model.ChatInfo {
+	chat := model.ChatInfo{
+		OwnerID: req.GetOwnerId(),
+		Users:   ToUsersFromReq(req.GetUsers()),
+	}
+	return &chat
+}
 
 func ToMessageFromService(messages []model.Message) []*desc.Message {
 	convertedMessages := make([]*desc.Message, 0, len(messages))

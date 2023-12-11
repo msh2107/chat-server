@@ -2,8 +2,10 @@ package chat_server
 
 import (
 	"context"
-	desc "github.com/msh2107/chat-server/pkg/chat_v1"
+
 	"google.golang.org/protobuf/types/known/emptypb"
+
+	desc "github.com/msh2107/chat-server/pkg/chat_v1"
 )
 
 func (i *Implementation) Delete(ctx context.Context, req *desc.DeleteRequest) (*emptypb.Empty, error) {

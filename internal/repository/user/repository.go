@@ -2,7 +2,9 @@ package user
 
 import (
 	"context"
+
 	sq "github.com/Masterminds/squirrel"
+
 	"github.com/msh2107/chat-server/internal/client/db"
 	"github.com/msh2107/chat-server/internal/model"
 	"github.com/msh2107/chat-server/internal/repository"

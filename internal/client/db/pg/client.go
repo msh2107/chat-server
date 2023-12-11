@@ -2,9 +2,11 @@ package pg
 
 import (
 	"context"
+
 	"github.com/jackc/pgx/v4/pgxpool"
-	"github.com/msh2107/chat-server/internal/client/db"
 	"github.com/pkg/errors"
+
+	"github.com/msh2107/chat-server/internal/client/db"
 )
 
 type pgClient struct {

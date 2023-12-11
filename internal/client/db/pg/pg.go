@@ -3,13 +3,15 @@ package pg
 import (
 	"context"
 	"fmt"
+	"log"
+
 	"github.com/georgysavva/scany/pgxscan"
 	"github.com/jackc/pgconn"
 	"github.com/jackc/pgx/v4"
 	"github.com/jackc/pgx/v4/pgxpool"
+
 	"github.com/msh2107/chat-server/internal/client/db"
 	"github.com/msh2107/chat-server/internal/client/db/prettier"
-	"log"
 )
 
 type key string

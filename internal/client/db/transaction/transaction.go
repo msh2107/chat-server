@@ -2,10 +2,12 @@ package transaction
 
 import (
 	"context"
+
 	"github.com/jackc/pgx/v4"
+	"github.com/pkg/errors"
+
 	"github.com/msh2107/chat-server/internal/client/db"
 	"github.com/msh2107/chat-server/internal/client/db/pg"
-	"github.com/pkg/errors"
 )
 
 type manager struct {

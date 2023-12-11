@@ -2,10 +2,12 @@ package chat
 
 import (
 	"context"
-	"github.com/msh2107/chat-server/internal/client/db"
 	"log"
 
+	"github.com/msh2107/chat-server/internal/client/db"
+
 	sq "github.com/Masterminds/squirrel"
+
 	"github.com/msh2107/chat-server/internal/model"
 	"github.com/msh2107/chat-server/internal/repository"
 )
